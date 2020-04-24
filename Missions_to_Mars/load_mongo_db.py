@@ -6,32 +6,32 @@ from scrape_mars import scrape
 conn = 'mongodb://localhost:27017'
 
 
-
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
-
-# Connect to a database. Will create one if not already available.
-db = client.mars_db
-
-# Drops collection if available to remove duplicates
-db.mars_table.drop()
-
+def load_new_data():
     
+    client = pymongo.MongoClient(conn)
 
-# def load_data():
-print("\nAttempting to load data...")
-# Creates a collection in the database and inserts two documents
+    # Connect to a database. Will create one if not already available.
+    db = client.mars_db
 
-mars_table = scrape()
-db.mars_table.update_one({}, {"$set": mars_table}, upsert=True)
-    
+    # Drops collection if available to remove duplicates
+    db.mars_table.drop()
+
+        
+
+    # def load_data():
+    print("\nAttempting to load data...")
+    # Creates a collection in the database and inserts two documents
+
+    mars_table = scrape()
+    db.mars_table.update_one({}, {"$set": mars_table}, upsert=True)
+    return mars_table
 
 
 if __name__ == "__main__":
-    print("\nRetrieving Data ...")
-    print("\nPlease wait ...")
-    mars_Query = list(db.mars_table.find())
+    print("\n> Retrieving Data ...")
+    print("\n> Please wait ...")
+    mars_Query = load_new_data()
     print("\nMars data :: \n")
     for record in mars_Query:
         print(record)
-    print("\nProcess Complete!\n")  
+    print("\n> Process Complete!\n")  

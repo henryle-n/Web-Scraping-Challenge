@@ -18,29 +18,29 @@ import os.path
 from os import path
 
 
+ # specify parser used
+lib_used = 'html.parser'
+
 # ### Set-up Web Browser Driver for Scraping
-
-# In[2]:
-def scrape():
-
-    # specify the path of browser driver want to use
+def init_browser():
+       # specify the path of browser driver want to use
     executable_path = {'executable_path': 'chromedriver.exe'}
 
     # specify the name of browser want to use
-    browser_name = 'chrome'
-
-    # specify parser used
-    lib_used = 'html.parser'
+    browser_name = 'chrome' 
 
     # start browser
     browser = Browser(browser_name, **executable_path, headless=False)
+    return browser
 
+
+
+# In[2]:
+def scrape():
+    # fire up the browser
+    browser = init_browser()
 
     # ### NASA Mars News Web Scraping
-
-    # In[3]:
-
-
     # link to NASA Mars news
     article_url = 'https://mars.nasa.gov/news/'
 
@@ -86,7 +86,8 @@ def scrape():
         
             
     # print out what found in the loop
-    print(f'>> Lastest news of Mars from NASA:\n    {las_news_title}\n\n>> News Content:\n    {las_news_content}\n\n>> News Link:\n    {las_news_link}')
+    # place holder for debug later if somethig is wrong
+    # print(f'>> Lastest news of Mars from NASA:\n    {las_news_title}\n\n>> News Content:\n    {las_news_content}\n\n>> News Link:\n    {las_news_link}')
 
 
     # ### JPL Mars Space Images - Featured Image Web Scraping
@@ -180,10 +181,11 @@ def scrape():
 
     # loop thru the list and find partial match for the weather content
     # as soon as the first string read, stop the loop
-    mars_weather = ''
+    mars_weather = ""
     for ea_tag in results:
-        if "insight" and "low" in ea_tag.text.lower():
+        if "insight" and "sol" and "low" and " high" in ea_tag.text.lower():
             mars_weather = ea_tag.text
+            print(ea_tag)
             break
         else:
             pass
@@ -217,13 +219,14 @@ def scrape():
     tables[0]
     df = tables[0]
     df.columns = ["Description", "Value"]
-    df
+    # df.set_index("Description", inplace=True)
+
 
 
     # In[11]:
 
 
-    mars_info_table = df.to_html(index=False)
+    mars_info_table = df.to_html(classes="table table-striped", index = False)
     mars_info_table.replace("\n", "")
 
 
@@ -364,7 +367,7 @@ def scrape():
     # In[16]:
     hemisphere_image_urls
 
-    # pd.DataFrame(hemisphere_image_urls)
+   
 
 
     # ## Summary of all Scraped Data
@@ -398,3 +401,9 @@ def scrape():
         }
 
     return mars_db
+
+# test and verify data is pulling in correctly
+if __name__ == "__main__":
+    print("\nVerifying Retrieved Data\n")
+    print(scrape())
+    print("\nProcess Complete!\n")

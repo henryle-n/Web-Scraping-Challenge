@@ -6,9 +6,10 @@ mongo_conn = 'mongodb://localhost:27017'
 def get_data():
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(mongo_conn)
+    
     # Connect to a database. Will create one if not already available.
     db = client.mars_db
-    return list(db.mars_table.find())
+    return db.mars_table.find_one()
     
 # This line is for training purposes only, you would not normally put this in code.
 print(f">> Process name :{__name__}\nRetrieving Data. Please wait ... ")
@@ -18,4 +19,4 @@ if __name__ == "__main__":
     mars_data = get_data()
     for record in mars_data:
         print(record)
-    print("\nProcess Complete!\n")    
+    print("\nProcess Complete!\n") 
