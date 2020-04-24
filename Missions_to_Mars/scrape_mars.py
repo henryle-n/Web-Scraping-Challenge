@@ -383,6 +383,7 @@ def scrape():
         "news_title" : las_news_title,
         "news_content" : las_news_content,
         "news_link" : las_news_link,
+        "mars_facts" : mars_info_table,
         "feature_img_url" : feature_image_url,
         "mars_weather" : mars_weather,
         "hemisphere_img_url" : hemisphere_image_urls

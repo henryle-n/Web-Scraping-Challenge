@@ -4,27 +4,30 @@ import pymongo
 # Create connection variable
 conn = 'mongodb://localhost:27017'
 
-# Pass connection to the pymongo instance.
-client = pymongo.MongoClient(conn)
 
-# Connect to a database. Will create one if not already available.
-db = client.mars_db
+def load_data()
+    # Pass connection to the pymongo instance.
+    client = pymongo.MongoClient(conn)
 
-# Drops collection if available to remove duplicates
-db.mars_db.drop()
+    # Connect to a database. Will create one if not already available.
+    db = client.mars_db
 
-print("\nAttempting to load data...")
-# Creates a collection in the database and inserts two documents
+    # Drops collection if available to remove duplicates
+    db.mars_db.drop()
 
-mars_data = scrape.scrape()
-db.mars_db.update({}, mars_data, upsert=True)
+    print("\nAttempting to load data...")
+    # Creates a collection in the database and inserts two documents
+    
+
+    mars_table = scrape_mars.scrape()
+    db.mars_table.update({}, mars_table, upsert=True)
     
 
 
 if __name__ == "__main__":
     print("\nAttempting to retrieve any loaded data....")
-    mars_info = list(db.mars_db.find())
+    mars_Query = list(db.mars_db.find())
     print("\nMars data :: \n")
-    for record in mars_info:
+    for record in mars_Query:
         print(record)
     print("\nProcess Complete!\n")  
