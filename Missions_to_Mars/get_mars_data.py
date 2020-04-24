@@ -8,13 +8,13 @@ def get_data():
     client = pymongo.MongoClient(mongo_conn)
     # Connect to a database. Will create one if not already available.
     db = client.mars_db
-    return list(db.mars_db.find())
+    return list(db.mars_table.find())
     
 # This line is for training purposes only, you would not normally put this in code.
-print(f"\nHey There, I'm the get data code.  My name is {__name__}")
+print(f">> Process name :{__name__}\nRetrieving Data. Please wait ... ")
 
 if __name__ == "__main__":
-    print("\nTesting Data Retrieval:....\n")
+    print("\nStill Working... Almost Done ...\n")
     mars_data = get_data()
     for record in mars_data:
         print(record)

@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Set route
 @app.route('/')
 def index():
-    return render_template('index.html', teams=get_teams())
+    return render_template('index.html', teams=get_mars_data())
 
 
 

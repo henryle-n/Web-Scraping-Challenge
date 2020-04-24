@@ -58,10 +58,10 @@ def scrape():
         pass
 
     soup = bsp(browser.html, lib_used)
-
+    time.sleep(5)
     # return results
     results = soup.find_all('div', class_='list_text')
-    results
+    
 
 
     # In[4]:
@@ -69,7 +69,6 @@ def scrape():
 
     # pull the lastest news from the list with index = 0 :: indication of the top latest
     latest_news = results[0]
-    latest_news
 
 
     # In[5]:
@@ -105,11 +104,15 @@ def scrape():
     del_t = 0.25
 
     # condition to make sure the webpage is loaded
-    if browser.is_element_present_by_tag('/html') == False:
-        time.sleep(t_wait)
-        t_wait += del_t
-    else:
-        pass
+    while False:
+        if browser.is_element_present_by_tag('/html') == False and t_wait <=t_out:
+            time.sleep(t_wait)
+            t_wait += del_t
+            print('waiting for the website')
+        
+        else:
+            break
+        print('website loaded')
 
 
     # click on couple of buttons to gain access to the full size image page
@@ -151,12 +154,12 @@ def scrape():
 
     # access & get content 
     browser.visit(weather_url)
-
+    time.sleep(5)
     t_wait = 0
     del_t = 0.25
 
     # condition to make sure the webpage is loaded
-    if browser.is_element_present_by_tag('/html') == False:
+    if browser.is_element_present_by_tag('body') == False:
         time.sleep(t_wait)
         t_wait += del_t
     else:
@@ -164,11 +167,12 @@ def scrape():
 
     # create soup object
     soup = bsp(browser.html, lib_used)
-    print(soup)
+   
+    
 
     # return results
-    results = soup.find_all('span', class_='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0')
-    results
+    results = soup.find_all('span', class_='css-901oao')
+    time.sleep(5)   
 
 
     # In[8]:
@@ -176,10 +180,13 @@ def scrape():
 
     # loop thru the list and find partial match for the weather content
     # as soon as the first string read, stop the loop
+    mars_weather = ''
     for ea_tag in results:
-        if ea_tag.text[0:7] == "InSight":
+        if "insight" and "low" in ea_tag.text.lower():
             mars_weather = ea_tag.text
             break
+        else:
+            pass
     mars_weather
 
 
@@ -239,7 +246,7 @@ def scrape():
         # create timer to delay the process and wait for chrome to load page
         # set wait time parameters
         t_wait = 0
-        t_out = 10
+        t_out = 3
         del_t = 1
         
         # access & get content by soup object
@@ -272,9 +279,10 @@ def scrape():
                 if t_wait <= t_out:
                     time.sleep(t_wait)
                     t_wait += del_t
-            
-            else:
-                print("Page takes too long to load!")
+                
+                else:
+                    print("Page takes too long to load!")
+                    
                 
     
         else:
@@ -286,7 +294,7 @@ def scrape():
                         
                     else:
                         t_wait += del_t
-
+                        
             else:    
                 print(f"Time out! Unable to find {hemi_name} Hemisphere Image")
                 print("Page takes too long to load!")
@@ -295,9 +303,9 @@ def scrape():
         
         print(">> Progress = 60%")
         # create soup object
-        time.sleep(3)
+        time.sleep(2)
         soup = bsp(browser.html, lib_used)
-        time.sleep(4)
+        time.sleep(2)
         
         # return results
         results = soup.find_all('ul', class_='')
