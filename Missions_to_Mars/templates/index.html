@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 
 
@@ -18,7 +18,7 @@
 <!-- CREATE WEBPAGE CONTENT -->
 
 <body>
-    <!-- connect to bootstrap & custom CSS files -->
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
@@ -31,63 +31,68 @@
 
 
     <!-- BIG JUMPOTRON HEADER -->
-    <div class="container-fluid fixed-top">
+    <!-- <div class="container-fluid"> -->
 
-        <div class="jumbotron">
-            <h1><p align="center"> Welcome!</p></h1>
-            <h1><p align="center"> Mission to Mars</p></h1>
-            <h3><p align="center">&gt&gt&gt Author :: Henry Le :: &lt&lt&lt</h3>
-            <h4><p align="center">&gt&gt&gt Date :: Apr. 24, 2020 :: &lt&lt&lt</h4>
-            <p align="center">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container"
+            <h1><p id="welcome_head" align = center>Welcome!</p></h1>
+            
+            <p class="lead" align="center">Track daily Mars Information: Latest news, Featured Mars Pictures and Much More</p>
+            <hr class="my-4">
+            
+            <h1><p align="center" class="colr_shift mission_to_mars"> Mission to Mars</p></h1>
+            
+            <p class="lead" align="center">
                 <a class="btn btn-primary btn-lg" href="/scrape" role="button">Fetch New Data</a>
             </p>
-    </div>
-
- <!-- CREATE LATEST NEWS  -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Latest Mars news.</h2>
-                <h4> {{mars_data.news_title}}</h4>
-                <p>{{mars_data.news_content}}</p>
-                <p align="left">
-                    <a class="btn btn-primary btn-sm" href="{{mars_data.news_link}}"role="button">More Details</a>
-                </p>
-            </div>
         </div>
     </div>
 
-
-    <!-- CREATE MAIN CONTENT = 1ST BLOCK -->
     <div class="container-fluid">
-        <div class="row">
-
-            <!-- CREATE 2 COLUMNS TO HOLD FEATURE IMAGE AND MARS DATA -->
-            <!-- FOR FEATURED IMAGE -->
-            <div class="col-md-8 col-sm-12">
-                <h2>FeaturedMars Image</h2>
-                <a href="{{mars_data. feature_img_url}}"><img src="{{mars_data. feature_img_url}}" alt="Featured Mars Image"/></a>           
+    <!-- CREATE LATEST NEWS -->
+        <div class = "row row-fluid">
+            <div class="col-lg-12">
+                <div class="card">
+                    <h4 class="card-header" id = "latest_news_head">Latest Mars News</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">{{mars_data.news_title}}</h5>
+                        <p class="card-text">{{mars_data.news_content}}</p>
+                        <a href="{{mars_data.news_link}}" class="btn btn-primary">Full Article</a>
+                    </div>
+                </div>
             </div>
 
+        </div>
+    </div>
+    <!-- CREATE MAIN CONTENT = 1ST BLOCK -->
+    <div class="container-fluid">
+        <div class="row big-container">
+            <!-- CREATE 2 COLUMNS TO HOLD FEATURE IMAGE AND MARS DATA -->
+            <!-- FOR FEATURED IMAGE -->
+            <div class="col-md-8 col-sm-12 sm-box">
+                <h2>Featured Mars Image</h2>
+                <a href="{{mars_data. feature_img_url}}">
+                    <img src="{{mars_data. feature_img_url}}" class ="img-thumbnail" alt="Featured Mars Image"/>
+                </a>           
+            </div>
+            
             <!-- FOR WEATHER AND FACTS -->
-            <div class="col-md-4 col-sm-12">
+            <div class="col-md-4 col-sm-12 sm-box">
                 <div class="row">
-                
                     <!-- 2 SUB COLUMNS/ROW FOR THE DATA -->
-
                     <!-- FOR WEATHER TAB -->
-                    <div class="col-12">
-                        <h3>Current Weather on Mars</h3>
+                    <div class="col-lg-12">
+                        <h2>Current Weather on Mars</h2>
                         <div>
-                            {{mars_data.mars_weather}}
+                            {{mars_data.mars_weather}} <br><hr><br>
                         </div>
                     </div>
-
+                    
            
                     <!-- FOR MARS FACTS TABLES-->
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         <div>
-                            <h3>Mars Facts</h3>
+                            <h2>Mars Facts</h2>
                             {{mars_data.mars_facts | safe}}
                         </div>
                     </div>
@@ -95,32 +100,36 @@
             </div>
         </div>
     </div>
-
+    
     <!-- CREATE MAIN CONTENT = 2ND BLOCK -->
     <div class="container-fluid">        
-        <h1><p align="center">Mars Hemispheres</p></h1>
+        
 
         <!-- FIRST HEMISPHERE -->
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
+        <div class="row big-container">
+            <div class="col-md-12">
+                <h2><p align="center">Mars Hemispheres</p></h2>
+            </div>           
+                
+            <div class="col-lg-6 col-md-12">
                 <a href="{{mars_data.hemisphere_img_url[0]['img_url']}}">
                     <img src="{{mars_data.hemisphere_img_url[0]['img_url']}}" class="img-thumbnail" alt="Cerberus Hemisphere">
                 </a>
                 <h3>
-                    <p class="box_comparison_header" style="text-align:center"></p>
+                    <p class="header_format" style="text-align:center"></p>
                     {{mars_data.hemisphere_img_url[0]['title']}}
-                </h3>
+                </h3><br><hr><br><br>
+            
             </div>
-
             <!-- SECOND HEMISPHERE -->
-            <div class="col-lg-6 col-sm-12">
+            <div class="col-lg-6 col-md-12">
                 <a href="{{mars_data.hemisphere_img_url[1]['img_url']}}">
                     <img src="{{mars_data.hemisphere_img_url[1]['img_url']}}" class="img-thumbnail" alt="Schiaparelli Hemisphere">
                 </a>                
                 <h3>
                     <p class="box_comparison_header" style="text-align:center"></p>
                     {{mars_data.hemisphere_img_url[1]['title']}}
-                </h3>
+                </h3><br><hr><br><br>
             </div>
 
             <!-- THIRD HEMISPHERE -->
@@ -131,7 +140,7 @@
                 <h3>
                     <p class="box_comparison_header" style="text-align:center"></p>
                     {{mars_data.hemisphere_img_url[2]['title']}}
-                </h3>
+                </h3><br><hr><br><br>
             </div>
 
             <!-- FOURTH HEMISPHERE -->
@@ -142,17 +151,20 @@
                 <h3>
                     <p class="box_comparison_header" style="text-align:center"></p>
                     {{mars_data.hemisphere_img_url[3]['title']}}
-                </h3>
+                </h3><br><hr><br><br>
             </div>
+        </div>
 
 
-    <footer class="footer_ref">
-        <div class="container">
-            <p align="center">
-            Author: Henry Le | Email: henryle.b11@gmail.com | Date: Apr. 24, 2020
-            </p>
-        </div> 
-    </footer>
+         <!-- create footer for author name and date    -->
+        <hr class = display-4>
+        <footer class="footer_ref">
+            <div class="container-fluid">
+                <p align="center"><br>
+                    :: Henry Le :: <br> @ :: henryle.b11@gmail.com &nbsp&nbsp&nbsp | &nbsp&nbsp&nbsp Date :: Apr. 24, 2020
+                </p>
+            </div> 
+        </footer>
 
 </body>
 
