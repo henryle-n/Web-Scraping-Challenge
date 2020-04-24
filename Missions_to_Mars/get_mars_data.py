@@ -3,11 +3,11 @@ import pymongo
 # Create connection variable
 mongo_conn = 'mongodb://localhost:27017'
 
-def get_teams():
+def get_mars():
     # Pass connection to the pymongo instance.
     client = pymongo.MongoClient(mongo_conn)
     # Connect to a database. Will create one if not already available.
-    db = client.team_db
+    db = client.mars_db
     return list(db.team.find())
     
 # This line is for training purposes only, you would not normally put this in code.
