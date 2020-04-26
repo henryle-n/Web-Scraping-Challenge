@@ -1,7 +1,7 @@
 <h1>Welcome to The Red Planet!</h1>
 
 
-<a href="#">Click here</a> 
+<a href="Missions_to_Mars/static/web_look.jpg">Click here</a> 
 
 <br>
 <br>
