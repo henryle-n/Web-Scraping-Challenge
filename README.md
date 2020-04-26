@@ -1,7 +1,7 @@
 <h1>Welcome to The Red Planet!</h1>
 
 
-<a href="#" class="button primary">Publish post</a> 
+<a href="#">Click here</a> 
 
 <br>
 <br>
