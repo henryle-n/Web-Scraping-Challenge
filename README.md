@@ -2,7 +2,7 @@
 
 
 
-<a href="https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static/web_look.jpg" class="button pill">Click here to see the final webpage image</a>
+<a href="https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static/web_look.jpg">Click here to see the final webpage image</a>
 
 <br>
 <br>
