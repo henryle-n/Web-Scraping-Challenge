@@ -1,5 +1,9 @@
 <h1>Welcome to The Red Planet!</h1>
 
+
+
+<a href="https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static/web_look.jpg" class="button pill">Click here to see the final webpage image</a>
+
 <br>
 <br>
 <p align="center">
@@ -9,7 +13,3 @@
 https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static
 
 
-
-<a href="https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static/web_look.jpg" class="button">Click here to see the final webpage image</a>
-<input class="button big" type="submit" value="Post comment (input)">
-<button class="button" type="submit">Post comment (button)</button>
