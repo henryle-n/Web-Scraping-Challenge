@@ -16,11 +16,9 @@ def load_new_data():
     # Drops collection if available to remove duplicates
     db.mars_table.drop()
 
-        
-
-    # def load_data():
+    # print message so user know so far so good    
     print("\nAttempting to load data...")
-    # Creates a collection in the database and inserts two documents
+   
 
     mars_table = scrape()
     db.mars_table.update_one({}, {"$set": mars_table}, upsert=True)
@@ -34,4 +32,5 @@ if __name__ == "__main__":
     print("\nMars data :: \n")
     for record in mars_Query:
         print(record)
+    # notify user that the process is completed    
     print("\n> Process Complete!\n")  
