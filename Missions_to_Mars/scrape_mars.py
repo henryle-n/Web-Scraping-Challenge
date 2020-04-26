@@ -13,9 +13,7 @@ import pandas as pd
 from bs4 import BeautifulSoup as bsp
 from splinter import Browser
 import time
-import os
-import os.path
-from os import path
+
 
 
  # specify parser used
@@ -407,3 +405,28 @@ if __name__ == "__main__":
     print("\nVerifying Retrieved Data\n")
     print(scrape())
     print("\nProcess Complete!\n")
+
+
+
+
+# ================RESERVE FOR CONVERTING IPYNB TO PY =====================
+
+# import os
+# import os.path
+# from os import path
+
+
+# # define file name
+# python_file_name = 'scrape_mars.py'
+
+# # if there is alreadt old 'scrape.py', then delete and reprocess a new one
+# if path.exists('scrape_mars.py'):
+#     os.remove('scrape_mars.py')
+
+# # if exception raises, just skip the export process
+# try:
+#     !jupyter nbconvert --to python mission_to_mars.ipynb
+#     os.rename("mission_to_mars.py", "scrape_mars.py")
+# except Exception:
+#     prit(Exception)
+#     pass

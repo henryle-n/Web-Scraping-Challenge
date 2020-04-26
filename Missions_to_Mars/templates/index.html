@@ -33,20 +33,29 @@
     <!-- BIG JUMPOTRON HEADER -->
     <!-- <div class="container-fluid"> -->
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="j-fld">
         <div class="container"
             <h1><p id="welcome_head" align = center>Welcome!</p></h1>
             
-            <p class="lead" align="center">Track daily Mars Information: Latest news, Featured Mars Pictures and Much More</p>
+            <p class="lead" style="font-size: 1.7rem; font-size-adjust: inherit;" align="center">Track daily Mars Information: Latest news, Featured Mars Pictures and Much More</p>
             <hr class="my-4">
             
-            <h1><p align="center" class="colr_shift mission_to_mars"> Mission to Mars</p></h1>
+            <h1>
+                <p class= "colr_shift mission-to-mars-text">
+                    <span class = "mission-to-mars-box">
+                        Mission to Mars
+                    </span>
+                </p>
+            </h1>
             
             <p class="lead" align="center">
-                <a class="btn btn-primary btn-lg" href="/scrape" role="button">Fetch New Data</a>
+                <a class="btn btn-primary btn-lg btn-primary btn-outline-warning" href="/scrape" role="button">Fetch New Data</a>
             </p>
         </div>
     </div>
+
+
+
 
     <div class="container-fluid">
     <!-- CREATE LATEST NEWS -->
@@ -55,9 +64,9 @@
                 <div class="card">
                     <h4 class="card-header" id = "latest_news_head">Latest Mars News</h4>
                     <div class="card-body">
-                        <h5 class="card-title">{{mars_data.news_title}}</h5>
-                        <p class="card-text">{{mars_data.news_content}}</p>
-                        <a href="{{mars_data.news_link}}" class="btn btn-primary">Full Article</a>
+                        <h5 class="card-title" style="font-size: 1.6rem;">{{mars_data.news_title}}</h5>
+                        <p class="card-text" style="font-size: 1.2rem;">{{mars_data.news_content}}</p>
+                        <a href="{{mars_data.news_link}}" class="btn btn-outline-dark">Full Article</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +92,7 @@
                     <!-- FOR WEATHER TAB -->
                     <div class="col-lg-12">
                         <h2>Current Weather on Mars</h2>
-                        <div>
+                        <div style="font-size: 1.2rem;">
                             {{mars_data.mars_weather}} <br><hr><br>
                         </div>
                     </div>
@@ -93,7 +102,7 @@
                     <div class="col-lg-12">
                         <div>
                             <h2>Mars Facts</h2>
-                            {{mars_data.mars_facts | safe}}
+                            <span style="font-size: 1.2rem">{{mars_data.mars_facts | safe}}</span>
                         </div>
                     </div>
                 </div>
