@@ -1,4 +1,13 @@
-<h1 style="color:red;">Welcome to The Red Planet!</h1>
+<h1>Welcome to The Red Planet!</h1>
+
+
+<style>
+h1 {
+  font-size: 70px;
+  color: red;
+}
+</style>
+
 <br>
 <br>
 <p align="center">
