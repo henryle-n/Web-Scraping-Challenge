@@ -11,7 +11,7 @@ def get_data():
     db = client.mars_db
     return db.mars_table.find_one()
     
-# This line is for training purposes only, you would not normally put this in code.
+# retrieve process name and post a wait message 
 print(f">> Process name :{__name__}\nRetrieving Data. Please wait ... ")
 
 if __name__ == "__main__":
