@@ -1,4 +1,4 @@
-<h1 style="color:#FF0000>Welcome to The Red Planet!</h1>
+<h1 style="color:#FF0000">Welcome to The Red Planet!</h1>
 
 
 <br>
