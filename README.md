@@ -1,4 +1,4 @@
-<div>class="text-blue mb-2">Welcome to The Red Planet!</div>
+<div class="text-blue mb-2">Welcome to The Red Planet!</div>
 
 
 
