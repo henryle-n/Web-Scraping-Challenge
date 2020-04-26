@@ -19,7 +19,7 @@ def load_new_data():
     # print message so user know so far so good    
     print("\nAttempting to load data...")
    
-
+    # run scrape py, get new data from web content and load into mongo db
     mars_table = scrape()
     db.mars_table.update_one({}, {"$set": mars_table}, upsert=True)
     return mars_table
