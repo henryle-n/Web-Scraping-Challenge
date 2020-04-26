@@ -1,4 +1,6 @@
-<h1 class="text-red">Welcome to The Red Planet!</h1>
+<h1><div class="text-blue mb-2">
+  Welcome to The Red Planet!
+</div></h1>
 
 
 <br>
