@@ -1,8 +1,7 @@
 <h1>Welcome to The Red Planet!</h1>
 
 
-
-<a href="https://github.com/henryle-n/Web-Scraping-Challenge/tree/master/Missions_to_Mars/static/web_look.jpg" class="button">Click here to see the final webpage image</a>
+<a href="#" class="button primary">Publish post</a> 
 
 <br>
 <br>
