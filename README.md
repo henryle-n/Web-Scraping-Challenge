@@ -1,9 +1,122 @@
-# Welcome to The Red Planet!
+# Welcome to The Red Planet ...  *MARS !*
 
-
-<a class = "btn" href="Missions_to_Mars/static/web_look.jpg">Click here</a> to see the final page image
-<br>
-<p align="center">
-<img src="Missions_to_Mars/static/jumbotron_background.jpg" alt="Mars out of range ... Waiting for satellite signal ..." max-height="60%" max-width="60%"><p>
-  
 ## Background
+
+For over 30 years since the first human kind's close-up of this planet in 1965, Mars Exploration has never stopped being a top-trending topic for not only scientists but also for general population all around the world. The more we look, the more interesting facts we found about this 4<sup>th</sup> planet from the Sun, such as "polar ice caps and clouds in its atmosphere, seasonal weather patterns, volcanoes, canyons and other recognizable features" (*mars.nasa.gov*).
+
+In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.
+
+<a class = "btn" href="Missions_to_Mars/static/web_look.jpg"><span style = "color:blue">**Click here**</span>
+</a> to see the final page image.<br>
+
+<p align="center">
+<img src="Missions_to_Mars/static/jumbotron_background.jpg" alt="Mars out of range ... Waiting for satellite signal ..." max-height="50%" max-width="50%"><p>
+  
+<hr>
+
+## OS / Tools / Techniques / Modules
+* Python | HTML5 / CSS3 | Markdown
+* Flask | Bootstrap | Spinter | ChromeDriver | Beautiful Soup | Pandas
+* PyMongo | MongoDB | Jupyter Notebook | Git
+* Google Chrome, ver. 84 | GitBash Terminal
+* Windows 10 Pro, ver. 1909 OS Build 18363.778
+
+## Process Overview
+
+1. Step 1 - Build Jupyter Notebook  
+* Develop source codes for scraping data ultilizing various modules
+* Websites visited for scraping:
+    * https://mars.nasa.gov/news
+    * 
+Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+
+Create a Jupyter Notebook file called mission_to_mars.ipynb and use this to complete all of your scraping and analysis tasks. The following outlines what you need to scrape.
+
+
+NASA Mars News
+
+Scrape the NASA Mars News Site and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
+
+# Example:
+news_title = "NASA's Next Mars Mission to Investigate Interior of Red Planet"
+
+news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this summer, on course for launch next May from Vandenberg Air Force Base in central California -- the first interplanetary launch in history from America's West Coast."
+
+JPL Mars Space Images - Featured Image
+
+
+Visit the url for JPL Featured Space Image here.
+
+
+Use splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called featured_image_url.
+
+
+Make sure to find the image url to the full size .jpg image.
+
+
+Make sure to save a complete url string for this image.
+
+
+# Example:
+featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
+
+Mars Weather
+
+Visit the Mars Weather twitter account here and scrape the latest Mars weather tweet from the page. Save the tweet text for the weather report as a variable called mars_weather.
+Note: Be sure you are not signed in to twitter, or scraping may become more difficult.
+Note: Twitter frequently changes how information is presented on their website. If you are having difficulty getting the correct html tag data, consider researching Regular Expression Patterns and how they can be used in combination with the .find() method.
+
+# Example:
+mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, pressure at 8.82 hPa, daylight 06:09-17:55'
+
+Mars Facts
+
+
+Visit the Mars Facts webpage here and use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
+
+
+Use Pandas to convert the data to a HTML table string.
+
+
+
+Mars Hemispheres
+
+
+Visit the USGS Astrogeology site here to obtain high resolution images for each of Mar's hemispheres.
+
+
+You will need to click each of the links to the hemispheres in order to find the image url to the full resolution image.
+
+
+Save both the image url string for the full resolution hemisphere image, and the Hemisphere title containing the hemisphere name. Use a Python dictionary to store the data using the keys img_url and title.
+
+
+Append the dictionary with the image url string and the hemisphere title to a list. This list will contain one dictionary for each hemisphere.
+
+
+# Example:
+hemisphere_image_urls = [
+    {"title": "Valles Marineris Hemisphere", "img_url": "..."},
+    {"title": "Cerberus Hemisphere", "img_url": "..."},
+    {"title": "Schiaparelli Hemisphere", "img_url": "..."},
+    {"title": "Syrtis Major Hemisphere", "img_url": "..."},
+]
+
+
+Step 2 - MongoDB and Flask Application
+Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
+
+
+Start by converting your Jupyter notebook into a Python script called scrape_mars.py with a function called scrape that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
+
+
+Next, create a route called /scrape that will import your scrape_mars.py script and call your scrape function.
+
+Store the return value in Mongo as a Python dictionary.
+
+
+
+Create a root route / that will query your Mongo database and pass the mars data into an HTML template to display the data.
+
+
+Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
