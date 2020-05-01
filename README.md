@@ -73,7 +73,7 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
  **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
 
 ## Summary
-* All data was successfully load / query into MongoDB, no significant event occurs
+* All data was successfully loaded / queried into MongoDB, no significant event occurs
 * Three python files were built to split the codes into easier to read, troubleshoot, test, etc. when problems occur 
 * The challenging part is writing CSS file to work with Flask & HTML
 * Pending on internet connection, several websites took a very long time to load or not loading at all. This causes errors or missing data as the website has not yet done redering  HTML / CSS files   
