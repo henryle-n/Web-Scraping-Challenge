@@ -28,6 +28,12 @@ In this project, a web application is built to scrape multiple websites for data
 ### Step 1 - Build Jupyter Notebook  ( *mission_to_mars.ipynb* )
 * Develop source codes for scraping data ultilizing various Python modules
 * Websites visited for scraping:
+| **Mars Latest News**  |   |   |   |   |
+|---|---|---|---|---|
+|**JPL Mars Featured Space Images**|https://www.jpl.nasa.gov/spaceimages/|   |   |   |
+|**Mars Facts**|https://space-facts.com/mars/|   |   |   |
+|**Mars Weather**   |https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars|   |   |   |
+
     * **Mars Latest News** :: https://mars.nasa.gov/news
     * **JPL Mars Featured Space Images** :: https://www.jpl.nasa.gov/spaceimages/
     * **Mars Weather** :: https://twitter.com/marswxreport
