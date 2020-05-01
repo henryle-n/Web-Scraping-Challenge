@@ -37,12 +37,6 @@ In this project, a web application is built to scrape multiple websites for data
 | **Mars Facts** | https://space-facts.com/mars | 
 | **Mars Hemispheres** | https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars | 
 
-    * **Mars Latest News** :: https://mars.nasa.gov/news
-    * **JPL Mars Featured Space Images** :: https://www.jpl.nasa.gov/spaceimages/
-    * **Mars Weather** :: https://twitter.com/marswxreport
-    * **Mars Facts** :: https://space-facts.com/mars/
-    * **Mars Hemispheres** :: https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars
-
 * Capture all scraped data into a dictionary
 * Exported the Jupyter Notebook file to a Python file named *scrap_mars.py*
 
@@ -70,7 +64,7 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
 
 * **static** :: folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.
 *  **templates** :: contains _'index.html'_ which is the template for displaying data on the web
-* **_Mission_t0_Mars.ipynb_** :: original jupyter notebook for developing program
+* **_Mission_to_Mars.ipynb_** :: original jupyter notebook for developing program
 * **application.py**application.py :: exported / converted from the jupyter notebook
 * **get_mars_data.py** :: query & show on HTML file any existing MongoDB data
 * **load_mongo_db.py** :: file to call for new web scaping and loading data into MongoDB
