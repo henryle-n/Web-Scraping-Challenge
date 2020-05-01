@@ -29,8 +29,8 @@ In this project, a web application is built to scrape multiple websites for data
 * Develop source codes for scraping data ultilizing various Python modules
 * Websites visited for scraping:
 
- **WEBSITE** | **WEB ADDRESS** |
------------- | ------------- | 
+<div style = "color: blue">**WEBSITE**</div> | **WEB ADDRESS** |
+:------------ |:------------- | 
  **Mars Latest News** | https://mars.nasa.gov/news |
  **JPL Mars Featured Space Images**| https://www.jpl.nasa.gov/spaceimages |
  **Mars Weather** | https://twitter.com/marswxreport |
@@ -62,15 +62,15 @@ In this project, a web application is built to scrape multiple websites for data
 ## Table of Content
 All files are stored in the folder and sub-folder of "Missions_to_Mars"
 
-| **FOLDER NAME** | **CONTENTS** |
-|:----------------|:-------------|
-| **static** | folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.|
-|  **templates** | contains _'index.html'_ which is the template for displaying data on the web |
-| **_Mission_to_Mars.ipynb_** | original jupyter notebook for developing program |
-| **application.py**application.py | exported / converted from the jupyter notebook |
-| **get_mars_data.py** | query & show on HTML file any existing MongoDB data |
-| **load_mongo_db.py** | file to call for new web scaping and loading data into MongoDB |
-| **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
+ **FOLDER NAME** | **CONTENTS** |
+:----------------|:-------------|
+ **static** | folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.|
+  **templates** | contains _'index.html'_ which is the template for displaying data on the web |
+ **_Mission_to_Mars.ipynb_** | original jupyter notebook for developing program |
+ **application.py**application.py | exported / converted from the jupyter notebook |
+ **get_mars_data.py** | query & show on HTML file any existing MongoDB data |
+ **load_mongo_db.py** | file to call for new web scaping and loading data into MongoDB |
+ **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
 
 ## Summary
 * All data was successfully load / query into MongoDB, no significant event occurs
