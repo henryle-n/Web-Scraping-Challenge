@@ -4,7 +4,9 @@
 
 For over 30 years since the first human kind's close-up of this planet in 1965, Mars Exploration has never stopped being a top-trending topic for not only scientists but also for general population all around the world. The more we look, the more interesting facts we found about this 4<sup>th</sup> planet from the Sun, such as "polar ice caps and clouds in its atmosphere, seasonal weather patterns, volcanoes, canyons and other recognizable features" (*mars.nasa.gov*).
 
-In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.
+In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.  
+
+NOTE: The main folder is ***Mission_to_Mars***
 
 <a class = "btn" href="Missions_to_Mars/static/web_look.jpg"><span style = "color:blue">**Click here**</span>
 </a> to see the final page image.<br>
