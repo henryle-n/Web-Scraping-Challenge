@@ -29,8 +29,8 @@ In this project, a web application is built to scrape multiple websites for data
 * Develop source codes for scraping data ultilizing various Python modules
 * Websites visited for scraping:
 
-<div style = "color: blue">**WEBSITE**</div> | **WEB ADDRESS** |
-:------------ |:------------- | 
+ **WEBSITE** | **WEB ADDRESS** |
+ :---------- |:---------- | 
  **Mars Latest News** | https://mars.nasa.gov/news |
  **JPL Mars Featured Space Images**| https://www.jpl.nasa.gov/spaceimages |
  **Mars Weather** | https://twitter.com/marswxreport |
