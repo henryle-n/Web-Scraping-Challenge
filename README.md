@@ -6,7 +6,7 @@ For over 30 years since the first human kind's close-up of this planet in 1965, 
 
 In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.  
 
-<u>**NOTE:**</u> The main folder is ```Mission_to_Mars```
+<u>NOTE:</u> The main folder is ```Mission_to_Mars```
 
 <a class = "btn" href="Missions_to_Mars/static/web_look.jpg"><span style = "color:blue">**Click here**</span>
 </a> to see the final page image.<br>
