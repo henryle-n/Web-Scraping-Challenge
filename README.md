@@ -103,7 +103,6 @@ File names: **application.py** & **index.HTML**
 * Open and run **application.py**.
 
 ## 5. Summary
-* All data was successfully loaded into MongoDB, no significant issue occurs while scrapping.
+* All data was successfully loaded into MongoDB. No significant issue occurs while web-scrapping.
 * Pending on internet connection, several websites took a very long time to load or not loading at all. This caused errors or missing data as the website has not yet done redering & loading. Delay time was added to multiple places in program to allow browser to catch up.   
 * Many nested **"if-elif-else"** were used to patch up issues associated with slow or invalid website to ensure application processed without hiccup. A better way to do it is utilized **"try / error"** block to lean codes and improve working speed.
-
