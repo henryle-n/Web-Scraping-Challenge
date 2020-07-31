@@ -33,17 +33,20 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
 
  **FOLDER NAME** | **CONTENTS** |
 :----------------|:-------------|
- **static** | folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.|
-  **templates** | contains _'index.html'_ which is the template for displaying data on the web |
- **_Mission_to_Mars.ipynb_** | original jupyter notebook for developing program |
- **application.py**application.py | exported / converted from the jupyter notebook |
- **get_mars_data.py** | query & show on HTML file any existing MongoDB data |
- **load_mongo_db.py** | file to call for new web scaping and loading data into MongoDB |
- **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
+**Chromedriver-v84** | Chrome Driver for Google Chrome ver. 84
+**Jupyter Notebook** | `Mission_to_Mars.ipynb`, utilized during developement of `scrape_mars.py`
+ **static** | contains _style.css_, and pictures of HTML background, readme & final website screenshot|
+  **templates** | contains _'index.html'_, main home page |
+ **application.py** | Flask App to drive the website |
+ **get_mars_data.py** | queries from MongoDB & shows data on main page  data |
+ **load_mongo_db.py** | calls for new web-scraping and loading data into MongoDB |
+ **scrape_mars.py** | scraps the data and export new data into new table |
 
-## Process Overview
-### Step 1 - Build Jupyter Notebook  ( *mission_to_mars.ipynb* )
-* Develop source codes for scraping data ultilizing various Python modules
+## 4. Process Overview
+### Step 1 - Develop Jupyter Notebook
+* In the address bar type: `chrome://version/`, look for **Google Chrome** header indicating current Chrome version. For example:
+  * `Google Chrome	84.0.4147.105 (Official Build) (64-bit) (cohort: Stable)`
+* Download correct version of Chrome Driver, <a href="https://chromedriver.chromium.org/">link here.</a>
 * Websites visited for scraping:
 
  **WEBSITE** | **WEB ADDRESS** |
@@ -54,20 +57,28 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
  **Mars Facts** | https://space-facts.com/mars | 
  **Mars Hemispheres** | https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars | 
 
-* Capture all scraped data into a dictionary
-* Exported the Jupyter Notebook file to a Python file named *scrap_mars.py*
+* Capture all scraped data into a dictionary.
+* Exported the Jupyter Notebook file to a Python file named *scrap_mars.py*.
 
-### Step 2 - Build MongoDB Application ( *load_mongo_db.py* )
-* Utilize PyMongo to establish the connection to MongoDB
-* Write the dictionary of all data (in _Step 1_) into MongoDB
+### Step 2 - Build MongoDB Application 
+File name: **load_mongo_db.py**
+* Download and install MongoDB.
+* Utilize PyMongo to establish the connection to MongoDB.
+  * If there is server connection error, perform these steps:
+    * Start -> Administrative Tools -> Services -> MongoDB.
+    * Make sure MongoDB Server (MongoDB) Status is *Running*.
+    * <a href="./static/images/start_db.jpg">Click here</a> for an image demo.
+* Write the dictionary of all data (scrapped from _Step 1_) into MongoDB.
 
-### Step 3 - Build Get Data Application ( *get_mars_data.py* )
-* Utilize PyMongo to establish the connection to MongoDB
-* Query current data in MongoDB store in memory
-* Prepare to send to main python app and HTML
+### Step 3 - Build Data Query Application from MongoDB 
+File name: **get_mars_data.py**
+* Utilize PyMongo to establish the connection to MongoDB.
+* Query data in MongoDB.
+* Prepare to send data back to Flask App.
 
-### Step 4 - Build Flask / HTML Application( *application.py* / *index.HTML* )
-* Build HTML template contains content layout / format
+### Step 4 - Build Flask / HTML Application
+File names: **application.py** & **index.HTML**
+* Build HTML template as the main webpage, formatted by CSS.
 * Build different ***@route*** to connect with previous python app for querying on the existing data or scraping for new data, then render all data into an HTML template
 
 
