@@ -16,8 +16,8 @@ In this project, a web application is built to scrape multiple websites for data
 ## 2. Languages, Tools &  Techniques
 * Languges:
   * Python | HTML5 / CSS3 | Markdown
-* Python Modules:
-  * Flask | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
+* Python Platform & Modules:
+  * Flask | Anaconda3 (Python 3.8) | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
 * HTML Libraries:
   * Bootstrap
 * noSQL Database:
@@ -41,11 +41,25 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
  **get_mars_data.py** | queries from MongoDB & shows data on main page  data |
  **load_mongo_db.py** | calls for new web-scraping and loading data into MongoDB |
  **scrape_mars.py** | scraps the data and export new data into new table |
+ **requirements.txt** | all libraries/ modules were used in this project |
 
 ## 4. Process Overview
-### Step 1 - Develop Jupyter Notebook
-* In the address bar type: `chrome://version/`, look for **Google Chrome** header indicating current Chrome version. For example:
-  * `Google Chrome	84.0.4147.105 (Official Build) (64-bit) (cohort: Stable)`
+### 4.1. Process at a Glance
+For simplifying codes and easier debugging, the whole process was broken up into smaller processes and thus written in multiple Python Files. The below schematic decribes how all files are working together.
+
+<div align="center">
+    <img src="./static/images/workflow.jpg"/>
+</div>
+
+### 4.1. Creating the App
+#### Step 1 - Preparation & Develop Jupyter Notebook
+* Create new environment:
+  * `conda create -n <name-of-env> python=3.8`
+  * `conda activate <name-of-env>`
+  * `pip install -r requirements.txt`
+* Download Chrome Driver:
+  * In the address bar type: `chrome://version/`, look for **Google Chrome** header indicating current Chrome version. 
+  * For example: `Google Chrome	84.0.4147.105 (Official Build) (64-bit) (cohort: Stable)`
 * Download correct version of Chrome Driver, <a href="https://chromedriver.chromium.org/">link here.</a>
 * Websites visited for scraping:
 
@@ -60,7 +74,7 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
 * Capture all scraped data into a dictionary.
 * Exported the Jupyter Notebook file to a Python file named *scrap_mars.py*.
 
-### Step 2 - Build MongoDB Application 
+#### Step 2 - Build MongoDB Application 
 File name: **load_mongo_db.py**
 * Download and install MongoDB.
 * Utilize PyMongo to establish the connection to MongoDB.
@@ -70,29 +84,26 @@ File name: **load_mongo_db.py**
     * <a href="./static/images/start_db.jpg">Click here</a> for an image demo.
 * Write the dictionary of all data (scrapped from _Step 1_) into MongoDB.
 
-### Step 3 - Build Data Query Application from MongoDB 
+#### Step 3 - Build Data Query Application from MongoDB 
 File name: **get_mars_data.py**
 * Utilize PyMongo to establish the connection to MongoDB.
 * Query data in MongoDB.
 * Prepare to send data back to Flask App.
 
-### Step 4 - Build Flask / HTML Application
+#### Step 4 - Build Flask App & Home Page
 File names: **application.py** & **index.HTML**
-* Build HTML template as the main webpage, formatted by CSS.
-* Build different ***@route*** to connect with previous python app for querying on the existing data or scraping for new data, then render all data into an HTML template
+* Build HTML template as the main webpage, formatted by CSS & Jinja codes embedded.
+* Build different RESTful APIs:
+  * Render **index.html**.
+  * Connect with previous Python apps for querying data and post on **HTML** template by **Jinja**.
 
 
-### Step 5 - Start-up Procedure
-* For first time use, launch **load_mongo_db.py** to load the first time dataset
-* Open and run **application.py** to pull data from MongoDB, render data with HTML as a template
+#### Step 5 - Start-up Procedure
+* For the first time use, launch **load_mongo_db.py** to get some data for MongoDB and webpage.
+* Open and run **application.py**.
 
-
-
-
-## Summary
-* All data was successfully loaded / queried into MongoDB, no significant event occurs
-* Three python files were built to split the codes into easier to read, troubleshoot, test, etc. when problems occur 
-* The challenging part is writing CSS file to work with Flask & HTML
-* Pending on internet connection, several websites took a very long time to load or not loading at all. This causes errors or missing data as the website has not yet done redering  HTML / CSS files   
-* Many nested **"if-elif-else"** were used to patch up issues associated with slow or invalid website to ensure application processed without hiccup. A better way to do it is utilized **"try / error"** block to lean codes and improve working speed 
+## 5. Summary
+* All data was successfully loaded into MongoDB, no significant issue occurs while scrapping.
+* Pending on internet connection, several websites took a very long time to load or not loading at all. This caused errors or missing data as the website has not yet done redering & loading. Delay time was added to multiple places in program to allow browser to catch up.   
+* Many nested **"if-elif-else"** were used to patch up issues associated with slow or invalid website to ensure application processed without hiccup. A better way to do it is utilized **"try / error"** block to lean codes and improve working speed.
 
