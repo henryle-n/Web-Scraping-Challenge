@@ -4,10 +4,6 @@
 # # Mission to Mars
 
 # ### Import Dependencies
-
-# In[24]:
-
-
 import pandas as pd
 # import pymongo as pmo
 from bs4 import BeautifulSoup as bsp
@@ -33,7 +29,6 @@ def init_browser():
 
 
 
-# In[2]:
 def scrape():
     # fire up the browser
     browser = init_browser()
@@ -61,16 +56,8 @@ def scrape():
     results = soup.find_all('div', class_='list_text')
     
 
-
-    # In[4]:
-
-
     # pull the lastest news from the list with index = 0 :: indication of the top latest
     latest_news = results[0]
-
-
-    # In[5]:
-
 
     # workflow: 
         # find all the div, then use the unique class of each div  
@@ -89,8 +76,6 @@ def scrape():
 
 
     # ### JPL Mars Space Images - Featured Image Web Scraping
-
-    # In[6]:
 
 
     # link to Mars Image
@@ -144,10 +129,6 @@ def scrape():
 
 
     # ### Mars Weather Web Scraping
-
-    # In[7]:
-
-
     # link to Mars weather
     weather_url = 'https://twitter.com/marswxreport?lang=en'
 
@@ -166,16 +147,11 @@ def scrape():
 
     # create soup object
     soup = bsp(browser.html, lib_used)
-   
-    
+      
 
     # return results
     results = soup.find_all('span', class_='css-901oao')
     time.sleep(5)   
-
-
-    # In[8]:
-
 
     # loop thru the list and find partial match for the weather content
     # as soon as the first string read, stop the loop
@@ -191,54 +167,25 @@ def scrape():
 
 
     # ### Mars Facts
-
-    # In[9]:
-
-
     # link to Mars weather
     facts_url = 'https://space-facts.com/mars/'
 
     # access & get content 
     browser.visit(facts_url)
     time.sleep(3)   
-    # soup = bsp(browser.html, lib_used)
-
-
-
-    # return results
-    # results = soup.find_all('span', class_='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0')
-    # results
-
-
-    # In[10]:
-
-
     tables = pd.read_html(facts_url)
     tables[0]
     df = tables[0]
     df.columns = ["Description", "Value"]
     # df.set_index("Description", inplace=True)
 
-
-
-    # In[11]:
-
-
     mars_info_table = df.to_html(classes="table table-striped", index = False)
     mars_info_table.replace("\n", "")
-
-
-    # In[12]:
-
 
     df.to_html('mars_info_table.html')
 
 
     # ### Mars Hemispheres
-
-    # In[13]:
-
-
     # create function to process webpage and retrieve hemisphere images of Mars
 
     def get_hemi_img(brwr, hemi_url, hemi_name):
@@ -338,17 +285,9 @@ def scrape():
         print(">> Progress = 100%")
         return (img_title, img_link)
 
-
-    # In[14]:
-
-
     # link to Mars hemisphere pics
     hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     hemi_name = ['Cerberus', 'Schiaparelli', 'Syrtis Major', 'Valles Marineris']
-
-
-    # In[15]:
-
 
     # get the list of dictionary of all hemisphere image info
     hemisphere_image_urls = []
@@ -360,19 +299,12 @@ def scrape():
         dict_each_hemi = {"title": answer[0] , "img_url": answer[1]}
         hemisphere_image_urls.append(dict_each_hemi)
         print(f'>> Finish with {name} Hemisphere\n{("-")*25}')
-
-
-    # In[16]:
+    
+    # review data
     hemisphere_image_urls
 
    
-
-
     # ## Summary of all Scraped Data
-
-    # In[17]:
-
-
     print(("=")*35, "START", ("=")*35)
     print(las_news_title, "\n", ("-")*50)
     print(las_news_content, "\n", ("-")*50)
@@ -405,28 +337,3 @@ if __name__ == "__main__":
     print("\nVerifying Retrieved Data\n")
     print(scrape())
     print("\nProcess Complete!\n")
-
-
-
-
-# ================RESERVE FOR CONVERTING IPYNB TO PY =====================
-
-# import os
-# import os.path
-# from os import path
-
-
-# # define file name
-# python_file_name = 'scrape_mars.py'
-
-# # if there is alreadt old 'scrape.py', then delete and reprocess a new one
-# if path.exists('scrape_mars.py'):
-#     os.remove('scrape_mars.py')
-
-# # if exception raises, just skip the export process
-# try:
-#     !jupyter nbconvert --to python mission_to_mars.ipynb
-#     os.rename("mission_to_mars.py", "scrape_mars.py")
-# except Exception:
-#     prit(Exception)
-#     pass

@@ -1,25 +1,31 @@
 # Welcome to The Red Planet ...  *MARS !*
+## 1. Background
 
-## Background
-
-For over 30 years since the first human kind's close-up of this planet in 1965, Mars Exploration has never stopped being a top-trending topic for not only scientists but also for general population all around the world. The more we look, the more interesting facts we found about this 4<sup>th</sup> planet from the Sun, such as "polar ice caps and clouds in its atmosphere, seasonal weather patterns, volcanoes, canyons and other recognizable features" (*mars.nasa.gov*).
+For over 30 years since the first human kind's close-up of this planet in 1965, Mars Exploration has never stopped being a top-trending topic. The more we look, the more interesting facts we found about this 4<sup>th</sup> planet from the Sun, such as "polar ice caps and clouds in its atmosphere, seasonal weather patterns, volcanoes, canyons and other recognizable features" (*mars.nasa.gov*).
 
 In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.
 
-<a class = "btn" href="Missions_to_Mars/static/web_look.jpg"><span style = "color:blue">**Click here**</span>
+<a class = "btn" href="./static/images/web_look.jpg"><span style = "color:blue">**Click here**</span>
 </a> to see the final page image.<br>
 
 <p align="center">
-<img src="Missions_to_Mars/static/jumbotron_background.jpg" alt="Mars out of range ... Waiting for satellite signal ..." max-height="50%" max-width="50%"><p>
+<img src="./static/images/demo.gif" alt="Mars out of range ... Waiting for satellite signal ..." max-height="50%" max-width="50%"><p>
   
 <hr>
 
-## OS / Tools / Techniques / Modules
-* Python | HTML5 / CSS3 | Markdown
-* Flask | Bootstrap | Spinter | ChromeDriver | Beautiful Soup | Pandas
-* PyMongo | MongoDB | Jupyter Notebook | Git
-* Google Chrome, ver. 84 | GitBash Terminal
-* Windows 10 Pro, ver. 1909 OS Build 18363.778
+## 2. Languges, Tools &  Techniques
+* Languges:
+  * Python | HTML5 / CSS3 | Markdown
+* Python Modules:
+  * Flask | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
+* HTML Libraries:
+  * Bootstrap
+* noSQL Database:
+  * MongoDB
+* Software/ Applications:
+  * Jupyter Notebook | Visual Studio Code | Google Chrome v. 84 | Windows Terminal | Git Bash
+* Operating System:
+  * Windows 10 Pro, ver. 1909
 
 ## Process Overview
 
