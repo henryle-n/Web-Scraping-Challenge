@@ -5,8 +5,6 @@ For over 30 years since the first human kind's close-up of this planet in 1965, 
 
 In this project, a web application is built to scrape multiple websites for data related to NASA Mars Exploration Program. All scraped data is stored in a MongoDB table, queried, and displayed on a comprehensive single HTML page.  
 
-<u>**NOTE:**</u> The main folder is ```Mission_to_Mars```
-
 <a class = "btn" href="./static/images/web_look.jpg"><span style = "color:blue">**Click here**</span>
 </a> to see the final page image.<br>
 
@@ -15,7 +13,7 @@ In this project, a web application is built to scrape multiple websites for data
   
 <hr>
 
-## 2. Languges, Tools &  Techniques
+## 2. Languages, Tools &  Techniques
 * Languges:
   * Python | HTML5 / CSS3 | Markdown
 * Python Modules:
@@ -23,14 +21,27 @@ In this project, a web application is built to scrape multiple websites for data
 * HTML Libraries:
   * Bootstrap
 * noSQL Database:
-  * MongoDB
+  * MongoDB (<a href="https://www.mongodb.com/try/download/community">Installation Link</a>)
 * Software/ Applications:
   * Jupyter Notebook | Visual Studio Code | Google Chrome v. 84 | Windows Terminal | Git Bash
 * Operating System:
   * Windows 10 Pro, ver. 1909
 
-## Process Overview
+## 3. Table of Contents
 
+All files are stored in the folder and sub-folder of "Missions_to_Mars"
+
+ **FOLDER NAME** | **CONTENTS** |
+:----------------|:-------------|
+ **static** | folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.|
+  **templates** | contains _'index.html'_ which is the template for displaying data on the web |
+ **_Mission_to_Mars.ipynb_** | original jupyter notebook for developing program |
+ **application.py**application.py | exported / converted from the jupyter notebook |
+ **get_mars_data.py** | query & show on HTML file any existing MongoDB data |
+ **load_mongo_db.py** | file to call for new web scaping and loading data into MongoDB |
+ **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
+
+## Process Overview
 ### Step 1 - Build Jupyter Notebook  ( *mission_to_mars.ipynb* )
 * Develop source codes for scraping data ultilizing various Python modules
 * Websites visited for scraping:
@@ -65,18 +76,7 @@ In this project, a web application is built to scrape multiple websites for data
 * Open and run **application.py** to pull data from MongoDB, render data with HTML as a template
 
 
-## Table of Content
-All files are stored in the folder and sub-folder of "Missions_to_Mars"
 
- **FOLDER NAME** | **CONTENTS** |
-:----------------|:-------------|
- **static** | folder contains _style.css_ which is a CSS format file, and other pictures of HTML background, etc.|
-  **templates** | contains _'index.html'_ which is the template for displaying data on the web |
- **_Mission_to_Mars.ipynb_** | original jupyter notebook for developing program |
- **application.py**application.py | exported / converted from the jupyter notebook |
- **get_mars_data.py** | query & show on HTML file any existing MongoDB data |
- **load_mongo_db.py** | file to call for new web scaping and loading data into MongoDB |
- **scrape_mars.py** | scraping codes to scrap the data and export new data into new table |
 
 ## Summary
 * All data was successfully loaded / queried into MongoDB, no significant event occurs
