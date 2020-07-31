@@ -48,7 +48,7 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
 For simplifying codes and easier debugging, the whole process was broken up into smaller processes and thus written in multiple Python Files. The below schematic decribes how all files are working together.
 
 <div align="center">
-    <img src="./static/images/workflow.jpg"/>
+    <img src="./static/images/workflow.JPG"/>
 </div>
 
 ### 4.1. Creating the App
