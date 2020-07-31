@@ -45,11 +45,14 @@ All files are stored in the folder and sub-folder of "Missions_to_Mars"
 
 ## 4. Process Overview
 ### 4.1. Process at a Glance
-For simplifying codes and easier debugging, the whole process was broken up into smaller processes and thus written in multiple Python Files. The below schematic decribes how all files are working together.
+For simplifying codes and easier debugging, the whole process was broken up into smaller processes and thus written in multiple Python Files. The below schematic decribes how all files are working together.  
 
 <div align="center">
     <img src="./static/images/workflow.JPG"/>
 </div>
+
+* Green arrows indicate process when **Fetch New Data** button is clicked. 
+* Orange arrows indicate how the data is retrieved, processed and displayed on the front-end. 
 
 ### 4.1. Creating the App
 #### Step 1 - Preparation & Develop Jupyter Notebook
