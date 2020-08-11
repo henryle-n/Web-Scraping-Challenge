@@ -15,7 +15,7 @@ In this project, a web application is built to scrape multiple websites for data
 
 ## 2. Languages, Tools &  Techniques
 * Languges:
-  * Python | HTML5 / CSS3 | Markdown
+  * Python 3 | HTML 5 | CSS 3 | Markdown
 * Python Platform & Modules:
   * Flask | Anaconda3 (Python 3.8) | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
 * HTML Libraries:
@@ -25,7 +25,7 @@ In this project, a web application is built to scrape multiple websites for data
 * Software/ Applications:
   * Jupyter Notebook | Visual Studio Code | Google Chrome v. 84 | Windows Terminal | Git Bash
 * Operating System:
-  * Windows 10 Pro, ver. 1909
+  * Windows 10 Pro v1909
 
 ## 3. Table of Contents
 
