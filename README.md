@@ -17,7 +17,7 @@ In this project, a web application is built to scrape multiple websites for data
 * Languges:
   * Python 3 | HTML 5 | CSS 3 | Markdown
 * Python Platform & Modules:
-  * Flask | Anaconda3 (Python 3.8) | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
+  * Flask | Anaconda 3 (Python 3.8) | Spinter (Chromedriver) | Beautiful Soup | Pandas | PyMongo | Jinja
 * HTML Libraries:
   * Bootstrap
 * noSQL Database:
